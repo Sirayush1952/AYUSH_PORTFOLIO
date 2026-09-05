@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayush Dayal — Fullstack Developer & UI/UX Designer</title>
+
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF4820'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>">
+
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ==================== FLOATING NAVIGATION ==================== -->
+  <header class="nav-wrapper">
+    <nav class="floating-nav" id="floatingNav">
+
+      <a href="#home" class="nav-item active" data-section="home">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span>Home</span>
+      </a>
+
+      <a href="#about" class="nav-item" data-section="about">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>About</span>
+      </a>
+
+      <a href="#projects" class="nav-item" data-section="projects">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        <span>Projects</span>
+      </a>
+
+      <a href="#contact" class="nav-item" data-section="contact">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span>Contact</span>
+      </a>
+
+    </nav>
+  </header>
+
+
+  <!-- ==================== SECTION 1: HERO ==================== -->
+  <section class="hero-section" id="home">
+
+    <!-- 3D Perspective Wireframe & Hex Micro-Pattern Backdrop -->
+    <div class="grid-background-3d">
+      <div class="hex-grid-overlay"></div>
+      <div class="perspective-grid-ceiling"></div>
+      <div class="perspective-grid-floor"></div>
+      <div class="perspective-grid-back"></div>
+      <div class="ambient-glow"></div>
+    </div>
+
+
+    <!-- Hero Top Bar Elements -->
+    <div class="hero-topbar">
+
+      <!-- Left Logo -->
+      <a href="#home" class="logo-link">
+        <img src="assets/logo.png" alt="Ayush Dayal Logo" class="logo-img">
+      </a>
+
+
+      <!-- Right Bio & Signature Block -->
+      <div class="hero-right-header">
+
+        <div class="signature-text">
+          Ayush Dayal
+        </div>
+
+        <p class="hero-bio">
+          Hi, I'm <strong>Ayush Dayal</strong>. I bridge the gap between engineering and art to design immersive,
+          high-performance web experiences.
+        </p>
+
+        <div class="hero-cta-wrap">
+          <a href="#contact" class="btn-get-in-touch">
+            <span>GET IN TOUCH</span>
+
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Main Hero Stage -->
+    <div class="hero-stage">
+
+      <!-- Left Metrics Sidebar -->
+      <aside class="metrics-sidebar">
+
+        <div class="metric-item">
+          <div class="metric-number">
+            <span class="counter" data-target="1.5">1.5</span>+
+          </div>
+          <div class="metric-label">
+            YEARS EXPERIENCE
+          </div>
+        </div>
+
+        <div class="metric-divider"></div>
+
+        <div class="metric-item">
+          <div class="metric-number">
+            <span class="counter" data-target="2">2</span>+
+          </div>
+          <div class="metric-label">
+            PROJECTS DONE
+          </div>
+        </div>
+
+        <div class="metric-divider"></div>
+
+        <div class="metric-item">
+          <div class="metric-number">
+            <span class="counter" data-target="100">100</span>%
+          </div>
+          <div class="metric-label">
+            CREATIVE DRIVE
+          </div>
+        </div>
+
+      </aside>
+
+
+      <!-- Centerpiece with Fluctuating Skills & Avatar Cutout -->
+      <div class="hero-centerpiece" id="avatarStage">
+
+        <!-- Fluctuating Dynamic Typography Layer Behind Avatar -->
+        <div class="skills-watermark-layer" id="watermarkLayer" aria-hidden="true">
+
+          <!-- Top Row -->
+          <div class="watermark-prefix-row">
+            <span class="prefix-left">I'M</span>
+            <span class="prefix-right">A</span>
+          </div>
+
+          <!-- Bottom Row -->
+          <div class="watermark-skills-row">
+            <div class="skill-phrase" id="skillPhrase">
+              UI/UX DESIGNER
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- 3D Avatar Character Container -->
+        <div class="avatar-card-container" id="avatarCard">
+
+          <div class="avatar-aura-glow"></div>
+
+          <img src="assets/avatar_cutout.png" alt="Ayush Dayal 3D Avatar" class="avatar-cutout-img" id="avatarCutout">
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Slanted Bottom Marquee Banner -->
+    <div class="marquee-ribbon-wrapper">
+
+      <div class="marquee-ribbon">
+
+        <div class="marquee-track">
+
+          <span class="marquee-item">FULLSTACK DEVELOPER</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">UI/UX DESIGNER</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">WEB DESIGNER</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">ANIMATION SPECIALIST</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">CREATIVE CODE</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">FULLSTACK DEVELOPER</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">UI/UX DESIGNER</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">WEB DESIGNER</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">ANIMATION SPECIALIST</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">CREATIVE CODE</span>
+          <span class="marquee-diamond">♦</span>
+
+        </div>
+
+
+        <div class="marquee-track" aria-hidden="true">
+
+          <span class="marquee-item">FULLSTACK DEVELOPER</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">UI/UX DESIGNER</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">WEB DESIGNER</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">ANIMATION SPECIALIST</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">CREATIVE CODE</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">FULLSTACK DEVELOPER</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">UI/UX DESIGNER</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">WEB DESIGNER</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">ANIMATION SPECIALIST</span>
+          <span class="marquee-diamond">♦</span>
+
+          <span class="marquee-item">CREATIVE CODE</span>
+          <span class="marquee-diamond">♦</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================== SECTION 2: ABOUT ==================== -->
+  <section class="about-section" id="about">
+
+    <div class="container">
+
+      <!-- Top Section Tag -->
+      <div class="section-tag-row">
+        <span class="section-tag">About</span>
+      </div>
+
+
+      <!-- Giant Stacked Name Typography -->
+      <div class="giant-name-wrapper">
+
+        <h1 class="giant-name">
+
+          <span class="giant-row">
+            AYUSH 
+          </span>
+
+          <span class="giant-rows">
+            DAYAL
+          </span>
+
+        </h1>
+
+      </div>
+
+
+      <!-- About Grid Content -->
+      <div class="about-grid">
+
+        <!-- Left Dark Card -->
+        <div class="about-card dark-card">
+
+          <div class="card-header-badge">
+            <span class="dot-indicator"></span>
+            <span>EXPERTISE & CRAFT</span>
+          </div>
+
+          <h2 class="card-title">
+            CREATIVE CODE & VISUAL DESIGN
+          </h2>
+
+          <p class="card-description">
+           Hi, I’m a Full-Stack Developer dedicated to crafting robust, end-to-end web applications. From pixel-perfect user interfaces to structured databases and optimized APIs, I bridge the gap between creative design and technical execution. I love turning complex logic into simple, intuitive web solutions that perform beautifully across all devices
+          </p>
+
+
+          <div class="tech-stack-pills">
+
+            <span class="tech-pill">
+              React & Next.js
+            </span>
+
+            <span class="tech-pill">
+              JavaScript 
+            </span>
+
+            <span class="tech-pill">
+             Html
+            </span>
+
+            <span class="tech-pill">
+             CSS
+            </span>
+
+            <span class="tech-pill">
+              Animations
+            </span>
+
+            <span class="tech-pill">
+              UI/UX Systems
+            </span>
+
+            <span class="tech-pill">
+              Node.js & APIs
+            </span>
+
+          </div>
+
+
+          <div class="card-footer-stats">
+
+            <div class="footer-stat">
+              <span class="stat-num">100%</span>
+              <span class="stat-text">Clean Architecture</span>
+            </div>
+
+            <div class="footer-stat">
+              <span class="stat-num">&lt;0.5s</span>
+              <span class="stat-text">Optimized Speed</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Right Framed Profile Card -->
+        <div class="about-card light-card">
+
+          <!-- Purple Art Signing Badge -->
+          <div class="art-signing-badge">
+
+            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+
+              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+              <path d="M2 2l7.586 7.586"></path>
+              <circle cx="11" cy="11" r="2"></circle>
+
+            </svg>
+
+            <span>ART SIGNING</span>
+
+          </div>
+
+
+          <!-- Photo Container -->
+          <div class="profile-image-container">
+
+            <div class="sticker-border-wrap">
+
+              <img src="assets/profile_about.jpg" alt="Ayush Dayal Profile" class="profile-img">
+
+            </div>
+
+          </div>
+
+
+          <div class="profile-caption">
+
+            <div class="profile-info">
+
+              <span class="profile-name">
+                Ayush Dayal
+              </span>
+
+              <span class="profile-role">
+                Fullstack Engineer & UI/UX Artist
+              </span>
+
+            </div>
+
+
+            <div class="status-indicator">
+
+              <span class="status-pulse"></span>
+
+              <span>
+                Available for Work
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           EDUCATION & ACADEMIC JOURNEY
+           ALL 3 CARDS ARE NOW INSIDE THE SAME CONTAINER
+           ===================================================== -->
+
+      <div class="education-section-block">
+
+        <div class="education-cards-list">
+
+
+          <!-- ================= CARD 1: B.TECH ================= -->
+          <div class="edu-card">
+
+            <div class="edu-card-top">
+
+              <div class="edu-period-badge">
+                <span>
+                  2025 – 2029 (UNDERGRADUATE)
+                </span>
+              </div>
+
+              <div class="edu-status-badge active">
+                <span>
+                  STATUS: ACTIVE
+                </span>
+              </div>
+
+            </div>
+
+
+            <h3 class="edu-degree-title">
+              Bachelor of Technology
+            </h3>
+
+
+            <p class="edu-institution-text">
+
+              Computer Science and Business Systems •
+              <span class="inst-highlight">
+                Narula Institute of Technology (NIT), Kolkata
+              </span>
+
+            </p>
+
+
+            <div class="edu-tags-row">
+
+              <span class="edu-tag-pill tag-green">
+                Data Structures & Algorithms
+              </span>
+
+              <span class="edu-tag-pill tag-cyan">
+                DBMS & SQL
+              </span>
+
+              <span class="edu-tag-pill tag-blue">
+                C Systems
+              </span>
+
+              <span class="edu-tag-pill tag-orange">
+                Java OOP
+              </span>
+
+              <span class="edu-tag-pill tag-blue">
+                Business Systems
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- ================= CARD 2: HIGHER SECONDARY ================= -->
+          <div class="edu-card">
+
+            <div class="edu-card-top">
+
+              <div class="edu-period-badge">
+                <span>
+                  HIGHER SECONDARY
+                </span>
+              </div>
+
+              <div class="edu-status-badge completed">
+                <span>
+                  STATUS: COMPLETED
+                </span>
+              </div>
+
+            </div>
+
+
+            <h3 class="edu-degree-title">
+              All India Senior School Certificate Examination (AISSCE) — Science Stream
+            </h3>
+
+
+            <p class="edu-institution-text">
+
+              RAJKAMAL SARAWATI VIDYA MANDIR •
+              <span class="inst-highlight">
+                Focus in Physics, Chemistry & Advanced Mathematics
+              </span>
+
+            </p>
+
+          </div>
+
+
+          <!-- ================= CARD 3: CLASS 10 ================= -->
+          <div class="edu-card">
+
+            <div class="edu-card-top">
+
+              <div class="edu-period-badge">
+                <span>
+                  Secondary Education
+                </span>
+              </div>
+
+              <div class="edu-status-badge completed">
+                <span>
+                  STATUS: COMPLETED
+                </span>
+              </div>
+
+            </div>
+
+
+            <h3 class="edu-degree-title">
+              Central Board of Secondary Education - 85%
+            </h3>
+
+
+            <p class="edu-institution-text">
+
+              MOUNT LITERA ZEE SCHOOL •
+              <span class="inst-highlight">
+                Focus in Science & Advanced Mathematics
+              </span>
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================== SECTION 3: PROJECTS ==================== -->
+  <section class="projects-section" id="projects">
+
+    <div class="container">
+
+      <div class="section-tag-row">
+
+        <span class="section-tag">
+          Worked on
+        </span>
+
+        <h2 class="section-heading">
+          FEATURED PROJECTS
+        </h2>
+
+      </div>
+
+
+      <div class="projects-grid">
+
+
+        <!-- Project Card 1 -->
+        <div class="project-card">
+
+          <div class="project-header">
+
+            <span class="project-category">
+              Fullstack 
+            </span>
+
+            <a href="#contact" class="project-link-btn" title="View Details">
+              ↗
+            </a>
+
+          </div>
+
+
+          <h3 class="project-title">
+            "KRISHI AI"
+          </h3>
+
+
+          <p class="project-desc">
+            Designed and implemented Krishi AI, an end-to-end agritech solution utilizing computer vision to analyze crop images and diagnose plant diseases. Built a localized, multilingual chatbot interface to bridge communication gaps for regional farmers, and integrated external APIs to deliver real-time weather analytics tailored to optimal crop growth environments.
+          </p>
+
+
+          <div class="project-tags">
+
+            <span>
+             HTML & CSS
+            </span>
+
+            <span>
+              JAVASCRIPT
+            </span>
+
+            <span>
+              UI/UX 
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- Project Card 2 -->
+        <div class="project-card highlight">
+
+          <div class="project-header">
+
+            <span class="project-categorys">
+               Creative Engineering
+            </span>
+
+            <a href="#contact" class="project-link-btn" title="View Details">
+              ↗
+            </a>
+
+          </div>
+
+
+          <h3 class="project-title">
+          PERSONAL PORTFOLIO
+          </h3>
+
+
+          <p class="project-desc">
+            A custom-built personal portfolio designed to showcase software craftsmanship. Engineered for seamless responsiveness, lightning-fast load times, and fluid UI animations to display my technical work.
+          </p>
+
+
+          <div class="project-tags">
+
+            <span>
+              Next.js 
+            </span>
+
+            <span>
+              Tailwind
+            </span>
+
+            <span>
+              Framer Motion
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- Project Card 3 -->
+        <div class="project-cardSS">
+
+          <div class="project-header">
+
+            <span class="project-category">
+              Under Development
+
+            </span>
+
+            <a href="#contact" class="project-link-btn" title="View Details">
+              ↗
+            </a>
+
+          </div>
+
+
+          <h3 class="project-title">
+            NEXT BIG THING
+          </h3>
+
+
+          <p class="project-desc">
+            Under Development: A cutting-edge web application designed to revolutionize user interaction through advanced features and intuitive design. Stay tuned for an innovative experience that pushes the boundaries of web technology.
+          </p>
+
+
+          <div class="project-tags">
+
+            <span>
+              node.js
+            </span>
+
+            <span>
+              moangoDB
+            </span>
+
+            <span>
+              React
+            </span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================== SECTION 4: CONTACT & FOOTER ==================== -->
+  <section class="contact-section" id="contact">
+
+    <div class="container">
+
+      <div class="contact-box">
+
+        <div class="contact-header">
+
+          <span class="section-tag">
+            connect
+          </span>
+
+          <h2 class="contact-title">
+            LET'S BUILD SOMETHING EXTRAORDINARY
+          </h2>
+
+          <p class="contact-subtitle">
+            Have an exciting idea, project, or want to collaborate? Reach out anytime.
+          </p>
+
+        </div>
+
+
+        <div class="contact-actions">
+
+          <a href="mailto:ayushdayal2077@gmail.com" class="btn-primary-large" id="emailBtn">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+
+              <polyline points="22,6 12,13 2,6"></polyline>
+
+            </svg>
+
+            <span>
+              ayushdayal2077@gmail.com
+            </span>
+
+          </a>
+
+
+          <button class="btn-secondary-copy" id="copyBtn" onclick="copyEmail()">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+
+            </svg>
+
+            <span id="copyText">
+              Copy Email
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <div class="social-links-row">
+
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+            GitHub
+          </a>
+
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+            LinkedIn
+          </a>
+
+          <a href="https://www.instagram.com/sir_ayush._27?igsi=N2wyeW5lYzJieWVj" target="_blank" rel="noopener noreferrer" class="social-pill">
+            Instagram
+          </a>
+
+         
+
+        </div>
+
+      </div>
+
+
+      <!-- Footer -->
+      <footer class="footer-bottom">
+
+        <div class="footer-left">
+
+          <span class="star-icon">
+            ✦
+          </span>
+
+          <span>
+            © 2026 Ayush Dayal. All Rights Reserved.
+          </span>
+
+        </div>
+
+
+        <div class="footer-right">
+
+          <span>
+            Crafted with passion & creative code
+          </span>
+
+        </div>
+
+      </footer>
+
+    </div>
+
+  </section>
+
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toast">
+    Email copied to clipboard!
+  </div>
+
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
