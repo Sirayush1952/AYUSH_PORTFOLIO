@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initFluctuatingSkills();
   initAchievements();
+  initVantaBirds();
 });
 
 /* =========================================================
@@ -210,4 +211,99 @@ function initAchievements() {
     observer.observe(card);
   });
 }
+
+
+/* =========================================================
+   7. VANTA.JS BIRDS ANIMATION (ABOUT & PROJECTS SECTIONS)
+   ========================================================= */
+function initVantaBirds() {
+  if (typeof VANTA === 'undefined' || !VANTA.BIRDS) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const aboutBg = document.getElementById('vanta-birds-bg');
+  if (aboutBg) {
+    try {
+      VANTA.BIRDS({
+        el: "#vanta-birds-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        backgroundColor: 0xffffff,
+        color1: 0xff4820,
+        color2: 0x222226,
+        birdSize: 1.20,
+        wingSpan: 24.00,
+        speedLimit: 4.00,
+        separation: 35.00,
+        alignment: 30.00,
+        cohesion: 30.00,
+        quantity: 3.50
+      });
+    } catch (err) {
+      console.warn("Vanta.js Birds on About failed:", err);
+    }
+  }
+
+  const projectsBg = document.getElementById('vanta-birds-projects-bg');
+  if (projectsBg) {
+    try {
+      VANTA.BIRDS({
+        el: "#vanta-birds-projects-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        backgroundColor: 0xf8f9fa,
+        color1: 0xff4820,
+        color2: 0x222226,
+        birdSize: 1.20,
+        wingSpan: 24.00,
+        speedLimit: 4.00,
+        separation: 35.00,
+        alignment: 30.00,
+        cohesion: 30.00,
+        quantity: 3.50
+      });
+    } catch (err) {
+      console.warn("Vanta.js Birds on Projects failed:", err);
+    }
+  }
+
+  const achievementsBg = document.getElementById('vanta-birds-achievements-bg');
+  if (achievementsBg) {
+    try {
+      VANTA.BIRDS({
+        el: "#vanta-birds-achievements-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        backgroundColor: 0xffffff,
+        color1: 0xff4820,
+        color2: 0x222226,
+        birdSize: 1.20,
+        wingSpan: 24.00,
+        speedLimit: 4.00,
+        separation: 35.00,
+        alignment: 30.00,
+        cohesion: 30.00,
+        quantity: 3.50
+      });
+    } catch (err) {
+      console.warn("Vanta.js Birds on Achievements failed:", err);
+    }
+  }
+}
+
+
 
