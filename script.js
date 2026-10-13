@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFluctuatingSkills();
   initAchievements();
   initVantaBirds();
+  initRibbonCanvas();
 });
 
 /* =========================================================
@@ -275,34 +276,153 @@ function initVantaBirds() {
       console.warn("Vanta.js Birds on Projects failed:", err);
     }
   }
+}
 
-  const achievementsBg = document.getElementById('vanta-birds-achievements-bg');
-  if (achievementsBg) {
-    try {
-      VANTA.BIRDS({
-        el: "#vanta-birds-achievements-bg",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        backgroundColor: 0xffffff,
-        color1: 0xff4820,
-        color2: 0x222226,
-        birdSize: 1.20,
-        wingSpan: 24.00,
-        speedLimit: 4.00,
-        separation: 35.00,
-        alignment: 30.00,
-        cohesion: 30.00,
-        quantity: 3.50
-      });
-    } catch (err) {
-      console.warn("Vanta.js Birds on Achievements failed:", err);
+/* =========================================================
+   8. FALLING RIBBONS / CONFETTI ANIMATION (ACHIEVEMENTS SECTION)
+   ========================================================= */
+function initRibbonCanvas() {
+  const canvas = document.getElementById('ribbon-canvas');
+  if (!canvas) return;
+
+  const section = canvas.closest('.achievements-section');
+  if (!section) return;
+
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  // Check prefers-reduced-motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  let width = 0;
+  let height = 0;
+  let animationFrameId = null;
+  let isVisible = true;
+
+  // Ribbon color palette matching site design tokens
+  const colors = [
+    '#FF4820', // Flame accent
+    '#FF6B4A', // Light coral
+    '#7C3AED', // Vivid purple
+    '#3B82F6', // Blue
+    '#10B981', // Emerald
+    '#F59E0B', // Amber
+    '#EC4899', // Pink
+    '#06B6D4'  // Cyan
+  ];
+
+  const RIBBON_COUNT = 45;
+  const ribbons = [];
+
+  function createRibbon(initialY = false) {
+    const len = 14 + Math.random() * 14;
+    const w = 4 + Math.random() * 3.5;
+    return {
+      x: Math.random() * width,
+      y: initialY ? Math.random() * height : -len - Math.random() * 30,
+      len: len,
+      w: w,
+      speedY: 0.9 + Math.random() * 1.5,
+      speedX: (Math.random() - 0.5) * 0.4,
+      angle: Math.random() * Math.PI * 2,
+      angleSpeed: (Math.random() - 0.5) * 0.03,
+      twist: Math.random() * Math.PI * 2,
+      twistSpeed: 0.04 + Math.random() * 0.04,
+      oscillation: Math.random() * Math.PI * 2,
+      oscSpeed: 0.02 + Math.random() * 0.02,
+      oscAmplitude: 0.8 + Math.random() * 0.8,
+      color: colors[Math.floor(Math.random() * colors.length)]
+    };
+  }
+
+  function resize() {
+    width = canvas.width = section.clientWidth;
+    height = canvas.height = section.clientHeight;
+  }
+
+  function initRibbons() {
+    ribbons.length = 0;
+    for (let i = 0; i < RIBBON_COUNT; i++) {
+      ribbons.push(createRibbon(true));
     }
   }
+
+  function update() {
+    for (let i = 0; i < ribbons.length; i++) {
+      const r = ribbons[i];
+      r.y += r.speedY;
+      r.oscillation += r.oscSpeed;
+      r.x += Math.sin(r.oscillation) * r.oscAmplitude + r.speedX;
+      r.angle += r.angleSpeed;
+      r.twist += r.twistSpeed;
+
+      // Wrap horizontally if drifting out of bounds
+      if (r.x < -20) r.x = width + 20;
+      if (r.x > width + 20) r.x = -20;
+
+      // Reset when falling past section bottom
+      if (r.y - r.len > height) {
+        ribbons[i] = createRibbon(false);
+      }
+    }
+  }
+
+  function render() {
+    ctx.clearRect(0, 0, width, height);
+
+    for (let i = 0; i < ribbons.length; i++) {
+      const r = ribbons[i];
+      ctx.save();
+      ctx.translate(r.x, r.y);
+      ctx.rotate(r.angle);
+
+      // Simulate 3D twist ribbon flipping
+      const flip = Math.cos(r.twist);
+      ctx.scale(flip, 1);
+
+      // Subtle metallic shimmer / opacity variation on twist
+      ctx.globalAlpha = 0.55 + 0.4 * Math.abs(flip);
+      ctx.fillStyle = r.color;
+
+      ctx.beginPath();
+      ctx.rect(-r.w / 2, -r.len / 2, r.w, r.len);
+      ctx.fill();
+
+      ctx.restore();
+    }
+  }
+
+  function loop() {
+    if (isVisible) {
+      update();
+      render();
+    }
+    animationFrameId = requestAnimationFrame(loop);
+  }
+
+  // Setup initial dimensions & ribbons
+  resize();
+  initRibbons();
+
+  // Resize listener
+  window.addEventListener('resize', () => {
+    resize();
+  });
+
+  // IntersectionObserver to pause loop when section is offscreen
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+      });
+    }, { threshold: 0.05 });
+    observer.observe(section);
+  }
+
+  // Start animation loop
+  animationFrameId = requestAnimationFrame(loop);
 }
 
 
