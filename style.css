@@ -1244,6 +1244,213 @@ button {
 
 
 /* =========================================================
+   ACHIEVEMENTS SECTION
+   ========================================================= */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 70px;
+  }
+}
+
+.achievements-section {
+  background-color: #FFFFFF;
+  padding: 100px 0;
+  border-top: 1px solid #E5E7EB;
+  scroll-margin-top: 90px;
+  position: relative;
+}
+
+.achievement-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 48px;
+}
+
+/* Staggered Scroll Entrance Animation */
+.achievement-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color var(--transition-smooth),
+              box-shadow var(--transition-smooth);
+}
+
+.achievement-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.achievement-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.12);
+}
+
+/* Top Actions: Status Badge + View Certificate Button */
+.achievement-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.achievement-cert-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 16px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #111113;
+  background-color: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  transition: all var(--transition-fast);
+}
+
+.achievement-cert-btn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+}
+
+.achievement-cert-btn .cert-arrow {
+  font-size: 0.88rem;
+  font-weight: 900;
+  line-height: 1;
+  transition: transform var(--transition-fast);
+}
+
+.achievement-cert-btn:hover .cert-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Short Description Text */
+.achievement-desc {
+  font-size: 0.94rem;
+  color: #4B5563;
+  line-height: 1.6;
+  margin-top: -6px;
+  margin-bottom: 18px;
+  max-width: 1000px;
+}
+
+/* Eye-Catching Highlight for Key Accolades */
+.highlight-attention {
+  display: inline-block;
+  font-weight: 800;
+  color: var(--primary);
+  background: #FFF0EB;
+  border: 1.5px solid rgba(255, 72, 32, 0.45);
+  padding: 1px 9px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(var(--primary-rgb), 0.22);
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+  vertical-align: baseline;
+  transition: all var(--transition-fast);
+}
+
+.highlight-attention:hover {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(var(--primary-rgb), 0.38);
+}
+
+/* Optional Certificate Preview Image Wrap */
+.achievement-preview-wrap {
+  margin-top: -4px;
+  margin-bottom: 18px;
+  max-width: 420px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1.5px solid #000000;
+}
+
+.achievement-preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Additional Tag Pill Theme (Purple) */
+.edu-tag-pill.tag-purple {
+  background: #F5F3FF;
+  color: #7C3AED;
+  border-color: #DDD6FE;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .achievements-section {
+    padding: 70px 0;
+    scroll-margin-top: 70px;
+  }
+
+  .achievement-cards-list {
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .achievement-card {
+    padding: 24px 20px;
+  }
+
+  .edu-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .achievement-top-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievement-top-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .achievement-cert-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .achievement-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .achievement-card:hover {
+    transform: none !important;
+  }
+  
+  .achievement-cert-btn:hover {
+    transform: none !important;
+  }
+}
+
+
+/* =========================================================
    5. CONTACT & FOOTER SECTION
    ========================================================= */
 .contact-section {
@@ -2910,9 +3117,14 @@ button {
   .nav-item span {
     display: none;
   }
+
+  .floating-nav {
+    gap: 4px;
+    padding: 4px 6px;
+  }
   
   .nav-item {
-    padding: 8px 12px;
+    padding: 8px 10px;
   }
 
   .watermark-prefix-row {
@@ -2940,5 +3152,11 @@ button {
     font-size: 1.55rem;
     word-spacing: 5px;
     -webkit-text-stroke: 1.2px rgba(0, 0, 0, 0.22);
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-item {
+    padding: 7px 8px;
   }
 }

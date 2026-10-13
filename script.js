@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initSmoothScroll();
   initFluctuatingSkills();
+  initAchievements();
 });
 
 /* =========================================================
@@ -177,3 +178,36 @@ function showToast(message) {
     toast.classList.remove('show');
   }, 2800);
 }
+
+
+/* =========================================================
+   6. ACHIEVEMENTS ENTRANCE ANIMATIONS
+   ========================================================= */
+function initAchievements() {
+  const cards = document.querySelectorAll('.achievement-card');
+  if (!cards.length) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    cards.forEach((card) => card.classList.add('in-view'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  cards.forEach((card, index) => {
+    card.style.transitionDelay = `${index * 120}ms`;
+    observer.observe(card);
+  });
+}
+
