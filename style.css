@@ -1301,6 +1301,7 @@ section[id] {
   z-index: 2;
 }
 
+#projects-ribbon-canvas,
 #ribbon-canvas {
   position: absolute;
   top: 0;

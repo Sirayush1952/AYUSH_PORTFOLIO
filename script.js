@@ -252,13 +252,13 @@ function initVantaBirds() {
 
 
 /* =========================================================
-   8. FALLING RIBBONS / CONFETTI ANIMATION (ACHIEVEMENTS SECTION)
+   8. FALLING RIBBONS / CONFETTI ANIMATION (PROJECTS & ACHIEVEMENTS)
    ========================================================= */
-function initRibbonCanvas() {
-  const canvas = document.getElementById('ribbon-canvas');
+function setupRibbonAnimation(canvasId) {
+  const canvas = document.getElementById(canvasId);
   if (!canvas) return;
 
-  const section = canvas.closest('.achievements-section');
+  const section = canvas.closest('section') || canvas.parentElement;
   if (!section) return;
 
   const ctx = canvas.getContext('2d');
@@ -396,6 +396,11 @@ function initRibbonCanvas() {
 
   // Start animation loop
   animationFrameId = requestAnimationFrame(loop);
+}
+
+function initRibbonCanvas() {
+  setupRibbonAnimation('projects-ribbon-canvas');
+  setupRibbonAnimation('ribbon-canvas');
 }
 
 
